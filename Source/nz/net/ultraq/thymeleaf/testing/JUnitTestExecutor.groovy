@@ -42,17 +42,6 @@ abstract class JUnitTestExecutor {
 	// TODO: Not executed in parallel... for now
 	private static TestExecutor testExecutor
 
-	static {
-		// Modify the ConsoleTestReporter to make it more useful for JUnit
-		ConsoleTestReporter.metaClass {
-			lastResult = null
-			testEnd = { executionId, nestingLevel, test, testName, result, executionTimeNanos ->
-				lastResult = result
-				delegate.testEnd(executionId, nestingLevel, test, testName, result, executionTimeNanos)
-			}
-		}
-	}
-
 	@Parameter
 	public String testPath
 
@@ -65,7 +54,8 @@ abstract class JUnitTestExecutor {
 
 		def testExecutor = getTestExecutor()
 		testExecutor.execute("classpath:${testPath}")
-		assertTrue(testExecutor.reporter.lastResult.isOK())
+		assertTrue(testExecutor.isAllOK())
+		testExecutor.reset()
 	}
 
 	/**
