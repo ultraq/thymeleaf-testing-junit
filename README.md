@@ -5,7 +5,7 @@ Thymeleaf Testing JUnit
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
 test.
 
- - Current version: 1.0.0
+ - Current version: 1.0.1
  - Released: 22 April 2015
 
 
@@ -24,7 +24,7 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
- - Version: `1.0.0`
+ - Version: `1.0.1`
 
 
 Usage
@@ -48,6 +48,10 @@ execute them as individual JUnit tests.  Voilà! :)
 
 Changelog
 ---------
+
+### 1.0.1
+ - Reintroduce 'lastResult' querying - it's more accurate for figuring-out the
+   status of a single test as other methods are affected by failed executions!
 
 ### 1.0.0
  - Initial release, extracted as a standalone project from the

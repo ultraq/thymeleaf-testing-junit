@@ -25,7 +25,6 @@ import org.reflections.Reflections
 import org.reflections.scanners.ResourcesScanner
 import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.testing.templateengine.engine.TestExecutor
-import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
 import static org.junit.Assert.assertTrue
 
 import java.util.regex.Pattern
@@ -54,8 +53,7 @@ abstract class JUnitTestExecutor {
 
 		def testExecutor = getTestExecutor()
 		testExecutor.execute("classpath:${testPath}")
-		assertTrue(testExecutor.isAllOK())
-		testExecutor.reset()
+		assertTrue(testExecutor.reporter.lastResult.isOK())
 	}
 
 	/**
@@ -89,7 +87,7 @@ abstract class JUnitTestExecutor {
 		if (!testExecutor) {
 			testExecutor = new TestExecutor(
 				dialects: testDialects,
-				reporter: new ConsoleTestReporter()
+				reporter: new JUnitTestReporter()
 			)
 		}
 		return testExecutor

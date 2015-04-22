@@ -35,7 +35,7 @@ project.sourceCompatibility = '1.6'
 
 project.group    = 'nz.net.ultraq.thymeleaf'
 project.artifact = 'thymeleaf-testing-junit'
-project.version  = '1.0.0'
+project.version  = '1.0.1'
 project.year     = '2015'
 
 dependencies {
