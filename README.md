@@ -5,8 +5,8 @@ Thymeleaf Testing JUnit
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
 test.
 
- - Current version: 1.0.1
- - Released: 22 April 2015
+ - Current version: 1.1.0
+ - Released: 2 May 2015
 
 
 Installation
@@ -24,30 +24,40 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
- - Version: `1.0.1`
+ - Version: `1.1.0`
 
 
 Usage
 -----
 
-Create a class in your tests directory that extends `nz.net.ultraq.thymeleaf.testing.JUnitTestExecutor`,
-implementing the 1 abstract method, `getTestDialects`.  This method should
-return a list of dialects you want to include in testing.  Note that you'll have
-to include one of Thymeleaf's `StandardDialect` or `SpringStandardDialect` as
-the minimum.
+Create a class in your tests directory that extends one of the test executor
+classes in the `nz.net.ultraq.thymeleaf.testing` package:
 
-What this does is extend a [JUnit parameterized test class](https://github.com/junit-team/junit/wiki/Parameterized-tests)
-that is already set up to search your classpath for Thymeleaf test files
-(`.thtest`).  All it needed was what dialects to test with, which you've now
-provided.
+ - Extending `JUnitTestExecutorAll` is the quickest way to get all of your
+   Thymeleaf test files executed with minimal configuration.
+ - Extending `JUnitTestExecutor` requires you to specify your own `@Parameter`-annotated
+   [parameterized test](https://github.com/junit-team/junit/wiki/Parameterized-tests)
+   method.  This method should return the list of Thymeleaf test files you wish
+   to execute.  This can be made easier utilizing the `reflections` instance
+   that is configured to search the classpath for resource files.
+
+Either class also requires you to implement 1 abstract method, `getTestDialects`.
+This method should return a list of dialects you want to include in testing.
+Note that you'll have to include one of Thymeleaf's `StandardDialect` or
+`SpringStandardDialect` at the minimum.
 
 With that done, run JUnit such that it includes the class you created.  The
-parameterized test class will be discovered, search for `.thtest` files, and
+parameterized test class will be discovered, search for the test files, and
 execute them as individual JUnit tests.  Voilà! :)
 
 
 Changelog
 ---------
+
+### 1.1.0
+ - Split the test executor into one for finding and running all Thymeleaf test
+   files in a project, and another that lets devs specify the regex patterns for
+   
 
 ### 1.0.1
  - Reintroduce 'lastResult' querying - it's more accurate for figuring-out the

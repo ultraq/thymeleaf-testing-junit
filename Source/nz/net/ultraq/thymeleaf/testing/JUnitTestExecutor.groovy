@@ -20,26 +20,24 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameter
-import org.junit.runners.Parameterized.Parameters
 import org.reflections.Reflections
 import org.reflections.scanners.ResourcesScanner
 import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.testing.templateengine.engine.TestExecutor
 import static org.junit.Assert.assertTrue
 
-import java.util.regex.Pattern
-
 /**
- * A parameterized JUnit test class that is run over every Thymeleaf testing
- * file (.thtest) in the test directory.
+ * A barebones Thymeleaf test file executor, requires that subclasses specify
+ * their own <tt>@Parameters</tt> annotated method that returns the list of
+ * Thymeleaf test files to have executed.
  * 
  * @author Emanuel Rabina
  */
 @RunWith(Parameterized.class)
 abstract class JUnitTestExecutor {
 
-	// TODO: Not executed in parallel... for now
-	private static TestExecutor testExecutor
+	protected static Reflections reflections = new Reflections('', new ResourcesScanner())
+	private static TestExecutor testExecutor	// TODO: Not executed in parallel... for now
 
 	@Parameter
 	public String testPath
@@ -54,18 +52,6 @@ abstract class JUnitTestExecutor {
 		def testExecutor = getTestExecutor()
 		testExecutor.execute("classpath:${testPath}")
 		assertTrue(testExecutor.reporter.lastResult.isOK())
-	}
-
-	/**
-	 * Get all the <tt>.thtest</tt> files in the project classpath.
-	 *
-	 * @return List of all the Thymeleaf testing files.
-	 * @throws URISyntaxException
-	 */
-	@Parameters(name = "{0}")
-	static List<String> findThymeleafTestFiles() throws URISyntaxException {
-
-		return new Reflections('', new ResourcesScanner()).getResources(Pattern.compile('.+\\.thtest')) as List
 	}
 
 	/**
