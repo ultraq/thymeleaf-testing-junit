@@ -57,7 +57,7 @@ Changelog
 ### 1.1.0
  - Split the test executor into one for finding and running all Thymeleaf test
    files in a project, and another that lets devs specify the regex patterns for
-   
+   nominating specific test files.
 
 ### 1.0.1
  - Reintroduce 'lastResult' querying - it's more accurate for figuring-out the
