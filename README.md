@@ -5,7 +5,7 @@ Thymeleaf Testing JUnit
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
 test.
 
- - Current version: 1.1.0
+ - Current version: 1.1.1
  - Released: 2 May 2015
 
 
@@ -24,7 +24,7 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
- - Version: `1.1.0`
+ - Version: `1.1.1`
 
 
 Usage
@@ -53,6 +53,10 @@ execute them as individual JUnit tests.  Voilà! :)
 
 Changelog
 ---------
+
+### 1.1.1
+ - Fix the sharing of Thymeleaf test executors - tests fail when more than 1
+   JUnit test executor was in the mix otherwise.
 
 ### 1.1.0
  - Split the test executor into one for finding and running all Thymeleaf test

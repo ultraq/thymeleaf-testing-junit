@@ -37,7 +37,8 @@ import static org.junit.Assert.assertTrue
 abstract class JUnitTestExecutor {
 
 	protected static Reflections reflections = new Reflections('', new ResourcesScanner())
-	private static TestExecutor testExecutor	// TODO: Not executed in parallel... for now
+
+	private static Map<Class,TestExecutor> testExecutors = [:]
 
 	@Parameter
 	public String testPath
@@ -64,18 +65,18 @@ abstract class JUnitTestExecutor {
 
 	/**
 	 * Returns the test executor for running the Thymeleaf tests, creating one
-	 * if it doesn't already exist (singleton executor).
+	 * if it doesn't already exist.
 	 * 
 	 * @return A Thymeleaf test executor for use w/ JUnit.
 	 */
 	private TestExecutor getTestExecutor() {
 
-		if (!testExecutor) {
-			testExecutor = new TestExecutor(
+		if (!testExecutors[this.class]) {
+			testExecutors[this.class] = new TestExecutor(
 				dialects: testDialects,
 				reporter: new JUnitTestReporter()
 			)
 		}
-		return testExecutor
+		return testExecutors[this.class]
 	}
 }
