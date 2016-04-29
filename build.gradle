@@ -14,19 +14,11 @@
  * limitations under the License.
  */
 
-/**
- * Gradle build script for the Thymeleaf Layout Dialect.  Creates the standalone
- * download file through the 'bundle' task, as well as all artifacts necessary
- * to deploy to a Maven repository through the Gradle Maven tasks.
- * 
- * @author Emanuel Rabina
- */
-
 apply plugin: 'groovy'
 apply plugin: 'maven'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/1.1.0/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/1.1.0/maven-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/1.1.0/bundle.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/1.2.1/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/1.2.1/maven-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/1.2.1/bundle.gradle'
 
 //project.name      = 'Thymeleaf Testing JUnit'
 project.description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
@@ -35,7 +27,7 @@ project.sourceCompatibility = '1.6'
 
 project.group    = 'nz.net.ultraq.thymeleaf'
 project.artifact = 'thymeleaf-testing-junit'
-project.version  = '1.1.1'
+project.version  = '1.2.0'
 project.year     = '2015'
 
 dependencies {
