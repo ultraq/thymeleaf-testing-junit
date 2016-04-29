@@ -42,7 +42,7 @@ dependencies {
 	compile(
 		'junit:junit:4.12',
 		'org.codehaus.groovy:groovy:2.4.3',
-		'org.reflections:reflections:0.9.9',
+		'org.reflections:reflections:0.9.10',
 		'org.thymeleaf:thymeleaf:2.1.4.RELEASE',
 		'org.thymeleaf:thymeleaf-testing:2.1.4.RELEASE'
 	)
