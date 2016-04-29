@@ -20,8 +20,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameter
-import org.reflections.Reflections
-import org.reflections.scanners.ResourcesScanner
 import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.testing.templateengine.engine.TestExecutor
 import static org.junit.Assert.assertTrue
@@ -35,8 +33,6 @@ import static org.junit.Assert.assertTrue
  */
 @RunWith(Parameterized.class)
 abstract class JUnitTestExecutor {
-
-	protected static Reflections reflections = new Reflections('', new ResourcesScanner())
 
 	private static Map<Class,TestExecutor> testExecutors = [:]
 
