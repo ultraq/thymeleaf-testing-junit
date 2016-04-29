@@ -43,7 +43,7 @@ dependencies {
 		'junit:junit:4.12',
 		'org.codehaus.groovy:groovy:2.4.6',
 		'org.reflections:reflections:0.9.10',
-		'org.thymeleaf:thymeleaf:3.0.0.BETA02',
-		'org.thymeleaf:thymeleaf-testing:3.0.0.BETA02'
+		'org.thymeleaf:thymeleaf:3.0.0.BETA03',
+		'org.thymeleaf:thymeleaf-testing:3.0.0.BETA03'
 	)
 }
