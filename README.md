@@ -73,8 +73,8 @@ public class MyDialectTestExecutor extends JUnitTestExecutor {
   @Parameters(name = "{0}")
   public static List<String> listSpecificTests() {
     return new ArrayList<>(
-      "/com/mysite/myproject/MyTest1.thtest",
-      "/com/mysite/myproject/MyTest2.thtest"
+      "com/mysite/myproject/MyTest1.thtest",
+      "com/mysite/myproject/MyTest2.thtest"
     );
   }
 }
