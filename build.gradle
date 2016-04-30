@@ -14,14 +14,6 @@
  * limitations under the License.
  */
 
-/**
- * Gradle build script for the Thymeleaf Layout Dialect.  Creates the standalone
- * download file through the 'bundle' task, as well as all artifacts necessary
- * to deploy to a Maven repository through the Gradle Maven tasks.
- * 
- * @author Emanuel Rabina
- */
-
 apply plugin: 'groovy'
 apply plugin: 'maven'
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/1.2.1/gradle-support.gradle'

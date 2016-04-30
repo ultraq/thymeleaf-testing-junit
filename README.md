@@ -64,25 +64,21 @@ public class MyDialectTestExecutor extends JUnitTestExecutorAll {
 As well as implementing the abstract method like in the `JUnitTestExecutorAll`
 example above, you also need to specify your own `@Parameter`-annotated
 [parameterized test](https://github.com/junit-team/junit/wiki/Parameterized-tests)
-method.  This method should return the list of Thymeleaf test files you wish to
-execute.  This can be made easier utilizing the `reflections` instance that is
-configured to search the classpath for resource files.
+method.  This method should return paths for the list of Thymeleaf test files
+you wish to execute.
 
 ```java
 public class MyDialectTestExecutor extends JUnitTestExecutor {
 
   @Parameters(name = "{0}")
-  public static List<String> listSpecificTests() throws URISyntaxException {
+  public static List<String> listSpecificTests() {
     return new ArrayList<>(
-      reflections.getResources(Pattern.compile('TestPrefix-.*\\.thtest'))
+      "com/mysite/myproject/MyTest1.thtest",
+      "com/mysite/myproject/MyTest2.thtest"
     );
   }
 }
 ```
-
-> `reflections` is an instance of [the reflections library](https://github.com/ronmamo/reflections),
-> so check out that project and docs if you wish to use it in other ways than
-> just shown here.
 
 Extending this class lets you select only the test files you want tested using
 this test executor, which can be useful if you need to configure a different set

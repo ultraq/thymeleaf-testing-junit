@@ -5,6 +5,11 @@ Changelog
 ### 2.0.0
  - Support for Thymeleaf 3.0
 
+### 1.2.0
+ - Remove `reflections` instance from class hierarchy, letting consumers choose
+   whatever means they want for resolving Thymeleaf test files
+   ([#4](https://github.com/ultraq/thymeleaf-testing-junit/issues/4))
+
 ### 1.1.1
  - Fix the sharing of Thymeleaf test executors - tests fail when more than 1
    JUnit test executor was in the mix otherwise.

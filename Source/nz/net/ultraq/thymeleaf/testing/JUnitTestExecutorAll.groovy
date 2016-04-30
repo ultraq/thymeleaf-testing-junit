@@ -17,8 +17,8 @@
 package nz.net.ultraq.thymeleaf.testing
 
 import org.junit.runners.Parameterized.Parameters
-
-import java.util.regex.Pattern
+import org.reflections.Reflections
+import org.reflections.scanners.ResourcesScanner
 
 /**
  * A Thymeleaf test file executor that runs every Thymeleaf testing file in the
@@ -27,6 +27,8 @@ import java.util.regex.Pattern
  * @author Emanuel Rabina
  */
 abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
+
+	private static Reflections reflections = new Reflections('', new ResourcesScanner())
 
 	/**
 	 * Get all the <tt>.thtest</tt> files in the project classpath.
@@ -37,8 +39,6 @@ abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 	@Parameters(name = "{0}")
 	static List<String> listAllThymeleafTestFiles() throws URISyntaxException {
 
-		return reflections.getResources(Pattern.compile('.+\\.thtest')) as List
+		return reflections.getResources(~/.+\\.thtest/) as List
 	}
-
-
 }
