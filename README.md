@@ -17,7 +17,7 @@ Installation
 Minimum of Java 6 and a Thymeleaf 2.1 test environment required.
 
 ### Standalone distribution
-Copy the JAR from [the latest release bundle](https://github.com/ultraq/thymeleaf-testing-junit/releases/latest),
+Copy the JAR from [one of the release bundles](https://github.com/ultraq/thymeleaf-testing-junit/releases),
 placing it in the classpath of your code, or build the project from the source
 code here on GitHub.
 
