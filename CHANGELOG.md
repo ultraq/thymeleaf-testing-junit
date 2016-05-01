@@ -5,6 +5,10 @@ Changelog
 ### 2.0.0
  - Support for Thymeleaf 3.0
 
+### 1.2.1
+ - Fix double-backslash in 'all test files' regex since moving to Groovy slashy
+   strings.
+
 ### 1.2.0
  - Remove `reflections` instance from class hierarchy, letting consumers choose
    whatever means they want for resolving Thymeleaf test files

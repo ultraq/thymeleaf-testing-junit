@@ -39,6 +39,6 @@ abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 	@Parameters(name = "{0}")
 	static List<String> listAllThymeleafTestFiles() throws URISyntaxException {
 
-		return reflections.getResources(~/.+\\.thtest/) as List
+		return reflections.getResources(~/.+\.thtest/) as List
 	}
 }
