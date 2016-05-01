@@ -4,7 +4,7 @@ Thymeleaf Testing JUnit
 
 [![Build Status](https://travis-ci.org/ultraq/thymeleaf-testing-junit.svg?branch=master)](https://travis-ci.org/ultraq/thymeleaf-testing-junit)
 [![GitHub Release](https://img.shields.io/github/release/ultraq/thymeleaf-testing-junit.svg?maxAge=3600)](https://github.com/ultraq/thymeleaf-testing-junit/releases/latest)
-[![Maven Central](https://img.shields.io/maven-central/v/nz.net.ultraq.thymeleaf/thymeleaf-testing-junit.svg?maxAge=3600)](http://search.maven.org/#artifactdetails|nz.net.ultraq.thymeleaf|thymeleaf-layout-dialect|1.3.3|jar)
+[![Maven Central](https://img.shields.io/maven-central/v/nz.net.ultraq.thymeleaf/thymeleaf-testing-junit.svg?maxAge=3600)](http://search.maven.org/#search|ga|1|g%3A%22nz.net.ultraq.thymeleaf%22%20AND%20a%3A%22thymeleaf-testing-junit%22)
 [![License](https://img.shields.io/github/license/ultraq/thymeleaf-testing-junit.svg?maxAge=2592000)](https://github.com/ultraq/thymeleaf-testing-junit/blob/master/LICENSE.txt)
 
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
