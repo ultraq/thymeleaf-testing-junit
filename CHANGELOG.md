@@ -2,6 +2,9 @@
 Changelog
 =========
 
+### 2.0.0
+ - Support for Thymeleaf 3.0
+
 ### 1.2.1
  - Fix double-backslash in 'all test files' regex since moving to Groovy slashy
    strings.

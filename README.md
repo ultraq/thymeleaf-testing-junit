@@ -14,7 +14,7 @@ test.
 Installation
 ------------
 
-Minimum of Java 6 and a Thymeleaf 2.1 test environment required.
+Minimum of Java 7 and a Thymeleaf 3.0 test environment required.
 
 ### Standalone distribution
 Copy the JAR from [one of the release bundles](https://github.com/ultraq/thymeleaf-testing-junit/releases),
@@ -37,7 +37,7 @@ classes in the `nz.net.ultraq.thymeleaf.testing` package.  Examples are below.
 
 When you've done that, run JUnit such that it includes the class(es) you created.
 JUnit's parameterized test magic will take care of the rest, executing your
-Thymeleaf test files will be executed as individual JUnit tests.  Voilà! :)
+Thymeleaf test files as individual JUnit tests.  Voilà! :)
 
 ### Extending `JUnitTestExecutorAll`
 
