@@ -5,8 +5,8 @@ Thymeleaf Testing JUnit
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
 test.
 
- - Current version: 1.2.0
- - Released: 30 April 2016
+ - Current version: 1.2.1
+ - Released: 1 May 2016
 
 
 Installation
@@ -24,7 +24,7 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
- - Version: `1.2.0`
+ - Version: `1.2.1`
 
 
 Usage
