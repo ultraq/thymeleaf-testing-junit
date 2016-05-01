@@ -2,6 +2,8 @@
 Thymeleaf Testing JUnit
 =======================
 
+[![Build Status](https://travis-ci.org/ultraq/thymeleaf-testing-junit.svg?branch=master)](https://travis-ci.org/ultraq/thymeleaf-testing-junit)
+
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
 test.
 
