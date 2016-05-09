@@ -14,7 +14,8 @@ test.
 Installation
 ------------
 
-Minimum of Java 7 and a Thymeleaf 3.0 test environment required.
+Minimum of Java 7 and a Thymeleaf 3.0 test environment required.  For Thymeleaf
+2.1, check out the 1.x releases.
 
 ### Standalone distribution
 Copy the JAR from [one of the release bundles](https://github.com/ultraq/thymeleaf-testing-junit/releases),
