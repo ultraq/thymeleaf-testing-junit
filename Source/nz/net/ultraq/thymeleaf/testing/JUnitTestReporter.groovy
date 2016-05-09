@@ -32,22 +32,13 @@ import org.thymeleaf.testing.templateengine.testable.ITestSequence
  */
 class JUnitTestReporter implements ITestReporter {
 
+	/**
+	 * The result of the last test execution.
+	 */
+	ITestResult lastResult
+
 	private final ConsoleTestReporter testReporter = new ConsoleTestReporter()
-	private ITestResult lastResult
 
-	/**
-	 * Return the result of the last test execution.
-	 * 
-	 * @return The last test result.
-	 */
-	ITestResult getLastResult() {
-
-		return lastResult
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void iterationEnd(String executionId, int nestingLevel, ITestIterator iterator,
 		int iterationNumber, int okTests, int totalTests, long executionTimeNanos) {
@@ -56,9 +47,6 @@ class JUnitTestReporter implements ITestReporter {
 				okTests, totalTests, executionTimeNanos)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void iterationStart(String executionId, int nestingLevel, ITestIterator iterator,
 		int iterationNumber) {
@@ -66,9 +54,6 @@ class JUnitTestReporter implements ITestReporter {
 		testReporter.iterationStart(executionId, nestingLevel, iterator, iterationNumber)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void iteratorEnd(String executionId, int nestingLevel, ITestIterator iterator,
 		int okTests, int totalTests, long executionTimeNanos) {
@@ -77,18 +62,12 @@ class JUnitTestReporter implements ITestReporter {
 				executionTimeNanos)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void iteratorStart(String executionId, int nestingLevel, ITestIterator iterator) {
 
 		testReporter.iteratorStart(executionId, nestingLevel, iterator)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void parallelizerEnd(String executionId, int nestingLevel, ITestParallelizer parallelizer,
 		int okTests, int totalTests, long executionTimeNanos) {
@@ -97,18 +76,12 @@ class JUnitTestReporter implements ITestReporter {
 				executionTimeNanos)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void parallelizerStart(String executionId, int nestingLevel, ITestParallelizer parallelizer) {
 
 		testReporter.parallelizerStart(executionId, nestingLevel, parallelizer)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void parallelThreadEnd(String executionId, int nestingLevel, ITestParallelizer parallelizer,
 		int threadNumber, int okTests, int totalTests, long executionTimeNanos) {
@@ -117,9 +90,6 @@ class JUnitTestReporter implements ITestReporter {
 				totalTests, executionTimeNanos)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void parallelThreadStart(String executionId, int nestingLevel, ITestParallelizer parallelizer,
 		int threadNumber) {
@@ -127,9 +97,6 @@ class JUnitTestReporter implements ITestReporter {
 		testReporter.parallelThreadStart(executionId, nestingLevel, parallelizer, threadNumber)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void sequenceEnd(String executionId, int nestingLevel, ITestSequence sequence,
 		int okTests, int totalTests, long executionTimeNanos) {
@@ -138,45 +105,30 @@ class JUnitTestReporter implements ITestReporter {
 				executionTimeNanos)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void sequenceStart(String executionId, int nestingLevel, ITestSequence sequence) {
 
 		testReporter.sequenceStart(executionId, nestingLevel, sequence)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void executionStart(String executionId) {
 
 		testReporter.executionStart(executionId)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void executionEnd(String executionId, int okTests, int totalTests, long executionTimeNanos) {
 
 		testReporter.executionEnd(executionId, okTests, totalTests, executionTimeNanos)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void testStart(String executionId, int nestingLevel, ITest test, String testName) {
 
 		testReporter.testStart(executionId, nestingLevel, test, testName)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void testEnd(String executionId, int nestingLevel, ITest test, String testName, ITestResult result, long executionTimeNanos) {
 
@@ -184,54 +136,36 @@ class JUnitTestReporter implements ITestReporter {
 		testReporter.testEnd(executionId, nestingLevel, test, testName, result, executionTimeNanos)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	boolean isAllOK() {
 
 		return testReporter.isAllOK()
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	long getTotalExecutionTimeMs() {
 
 		return testReporter.getTotalExecutionTimeMs()
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	Set<String> getAllTestNames() {
 
 		return testReporter.getAllTestNames()
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	ITestResult getResultByTestName(String testName) {
 
 		return testReporter.getResultByTestName(testName)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	long getExecutionTimeMsByTestName(String testName) {
 
 		return testReporter.getExecutionTimeMsByTestName(testName)
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	void reset() {
 

@@ -31,13 +31,12 @@ abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 	private static Reflections reflections = new Reflections('', new ResourcesScanner())
 
 	/**
-	 * Get all the <tt>.thtest</tt> files in the project classpath.
+	 * Get all the {@code .thtest} files in the project classpath.
 	 * 
 	 * @return List of all the Thymeleaf testing files.
-	 * @throws URISyntaxException
 	 */
 	@Parameters(name = "{0}")
-	static List<String> listAllThymeleafTestFiles() throws URISyntaxException {
+	static List<String> listAllThymeleafTestFiles() {
 
 		return reflections.getResources(~/.+\.thtest/) as List
 	}
