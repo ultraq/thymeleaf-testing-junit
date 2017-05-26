@@ -19,7 +19,6 @@ package nz.net.ultraq.thymeleaf.testing.tests
 import nz.net.ultraq.thymeleaf.testing.JUnitTestExecutorAll
 
 import org.junit.Test
-import static org.junit.Assert.*
 
 /**
  * Tests for the {@link JUnitTestExecutorAll} class.
@@ -28,10 +27,13 @@ import static org.junit.Assert.*
  */
 class JUnitTestExecutorAllTests {
 
+	/**
+	 * Ensure all Thymeleaf test files are found.
+	 */
 	@Test
 	void findAllThymeleafTestFiles() {
 
 		def testFiles = JUnitTestExecutorAll.listAllThymeleafTestFiles()
-		assertEquals(2, testFiles.size())
+		assert testFiles.size() == 3
 	}
 }

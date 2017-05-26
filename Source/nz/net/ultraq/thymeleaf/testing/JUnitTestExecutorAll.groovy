@@ -28,7 +28,7 @@ import org.reflections.scanners.ResourcesScanner
  */
 abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 
-	private static Reflections reflections = new Reflections('', new ResourcesScanner())
+	private static final Reflections reflections = new Reflections('', new ResourcesScanner())
 
 	/**
 	 * Get all the {@code .thtest} files in the project classpath.

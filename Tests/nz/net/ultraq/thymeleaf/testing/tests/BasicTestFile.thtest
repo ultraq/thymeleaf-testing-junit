@@ -1,0 +1,20 @@
+
+# Just a wee test to test the tests...
+
+%TEMPLATE_MODE HTML
+
+%INPUT
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+	<body>
+		<p th:text="'Hi!'">(text here)</p>
+	</body>
+</html>
+
+%OUTPUT
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Hi!</p>
+	</body>
+</html>

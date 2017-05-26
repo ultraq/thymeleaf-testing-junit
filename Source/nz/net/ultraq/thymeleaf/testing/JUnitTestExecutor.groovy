@@ -61,6 +61,17 @@ abstract class JUnitTestExecutor {
 	protected abstract List<? extends IDialect> getTestDialects()
 
 	/**
+	 * Extension point for providing a custom reporter built atop this library's
+	 * repoter which tracks test executions as a single test.
+	 * 
+	 * @return Custom test reporter.
+	 */
+	protected JUnitTestReporter getTestReporter() {
+
+		return new JUnitTestReporter()
+	}
+
+	/**
 	 * Returns the test executor for running the Thymeleaf tests, creating one
 	 * if it doesn't already exist.
 	 * 
@@ -71,7 +82,7 @@ abstract class JUnitTestExecutor {
 		if (!testExecutors[this.class]) {
 			testExecutors[this.class] = new TestExecutor(
 				dialects: testDialects,
-				reporter: new JUnitTestReporter()
+				reporter: testReporter
 			)
 		}
 		return testExecutors[this.class]

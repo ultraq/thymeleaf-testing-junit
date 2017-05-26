@@ -31,7 +31,7 @@ project.sourceCompatibility = '1.7'
 
 project.group    = 'nz.net.ultraq.thymeleaf'
 project.artifact = 'thymeleaf-testing-junit'
-project.version  = '2.0.0'
+project.version  = '2.1.0-SNAPSHOT'
 project.year     = '2015'
 
 dependencies {
@@ -44,11 +44,11 @@ dependencies {
 	)
 }
 
+cobertura {
+	coverageFormats = ['html', 'xml']
+}
+
 groovydoc {
 	link('http://www.thymeleaf.org/apidocs/thymeleaf/3.0.0.RELEASE/', 'org.thymeleaf.')
 	link('http://junit.org/junit4/javadoc/4.12/', 'org.junit.')
-}
-
-cobertura {
-	coverageFormats = ['html', 'xml']
 }
