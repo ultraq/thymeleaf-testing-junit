@@ -39,12 +39,11 @@ class JUnitTestReporter implements ITestReporter {
 
 	/**
 	 * Constructor, configure this custom reporter to use the given underlying
-	 * test reporter as the delegate.  Defaults to a {@link ConsoleTestReporter}
-	 * if not specified.
+	 * test reporter as the delegate.
 	 * 
 	 * @param testReporter
 	 */
-	JUnitTestReporter(ITestReporter testReporter = new ConsoleTestReporter()) {
+	JUnitTestReporter(ITestReporter testReporter) {
 
 		this.testReporter = testReporter
 	}

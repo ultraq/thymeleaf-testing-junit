@@ -23,6 +23,8 @@ import org.junit.runners.Parameterized.Parameter
 import org.junit.runners.Parameterized.Parameters
 import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.testing.templateengine.engine.TestExecutor
+import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
+import org.thymeleaf.testing.templateengine.report.ITestReporter
 import static org.junit.Assert.*
 
 /**
@@ -62,13 +64,14 @@ abstract class JUnitTestExecutor {
 
 	/**
 	 * Extension point for providing a custom reporter built atop this library's
-	 * repoter which tracks test executions as a single test.
+	 * repoter which tracks test executions as a single test.  Uses a
+	 * {@link ConsoleTestReporter} if not overridden.
 	 * 
-	 * @return Custom test reporter.
+	 * @return Test reporter to use in execution.
 	 */
-	protected JUnitTestReporter getTestReporter() {
+	protected ITestReporter getTestReporter() {
 
-		return new JUnitTestReporter()
+		return new ConsoleTestReporter()
 	}
 
 	/**
@@ -82,7 +85,7 @@ abstract class JUnitTestExecutor {
 		if (!testExecutors[this.class]) {
 			testExecutors[this.class] = new TestExecutor(
 				dialects: testDialects,
-				reporter: testReporter
+				reporter: new JUnitTestReporter(testReporter)
 			)
 		}
 		return testExecutors[this.class]

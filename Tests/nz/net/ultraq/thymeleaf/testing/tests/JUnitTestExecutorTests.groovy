@@ -17,12 +17,12 @@
 package nz.net.ultraq.thymeleaf.testing.tests
 
 import nz.net.ultraq.thymeleaf.testing.JUnitTestExecutor
-import nz.net.ultraq.thymeleaf.testing.JUnitTestReporter
 
 import org.junit.Test
 import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.standard.StandardDialect
-import org.thymeleaf.testing.templateengine.report.AbstractTextualTestReporter
+import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
+import org.thymeleaf.testing.templateengine.report.ITestReporter
 
 /**
  * Tests for the {@link JUnitTestExecutor} class.
@@ -45,12 +45,12 @@ class JUnitTestExecutorTests {
 			List<? extends IDialect> testDialects = [
 			  new StandardDialect()
 			]
-			JUnitTestReporter testReporter = new JUnitTestReporter(new AbstractTextualTestReporter() {
+			ITestReporter testReporter = new ConsoleTestReporter() {
 				@Override
 				protected void output(String line, boolean error) {
 					output += line
 				}
-			})
+			}
 		}
 		testExecutor.testPath = 'nz/net/ultraq/thymeleaf/testing/tests/BasicTestFile.thtest'
 		testExecutor.executeThymeleafTestFile()

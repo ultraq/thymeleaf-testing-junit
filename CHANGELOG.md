@@ -2,6 +2,11 @@
 Changelog
 =========
 
+### 2.1.0
+ - Let devs specify the Thymeleaf test reporter to use, defaulting to the
+   `ConsoleTestReporter` as in previous versions.
+   ([#6](https://github.com/ultraq/thymeleaf-testing-junit/issues/6))
+
 ### 2.0.0
  - Support for Thymeleaf 3.0
 
