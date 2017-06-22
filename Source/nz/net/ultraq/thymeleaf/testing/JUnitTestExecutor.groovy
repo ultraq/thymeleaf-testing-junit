@@ -63,8 +63,8 @@ abstract class JUnitTestExecutor {
 	protected abstract List<? extends IDialect> getTestDialects()
 
 	/**
-	 * Extension point for providing a custom reporter built atop this library's
-	 * repoter which tracks test executions as a single test.  Uses a
+	 * Extension point for providing a custom reporter to act as delegate to this
+	 * library's reporter which tracks test executions as a single test.  Uses a
 	 * {@link ConsoleTestReporter} if not overridden.
 	 * 
 	 * @return Test reporter to use in execution.
