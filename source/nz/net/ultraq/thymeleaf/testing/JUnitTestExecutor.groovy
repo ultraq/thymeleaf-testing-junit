@@ -47,7 +47,8 @@ abstract class JUnitTestExecutor {
 	} ()
 
 	@Parameter
-	String testPath
+	@SuppressWarnings(['PublicInstanceField', 'NonFinalPublicField']) // Has to be public for JUnit
+	public String testPath
 
 	/**
 	 * Run the Thymeleaf test executor over the test file, asserting the result
