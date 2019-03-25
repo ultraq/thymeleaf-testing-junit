@@ -34,13 +34,20 @@ import static org.junit.Assert.*
  * 
  * @author Emanuel Rabina
  */
-@RunWith(Parameterized.class)
+@RunWith(Parameterized)
 abstract class JUnitTestExecutor {
 
-	private static Map<Class,TestExecutor> testExecutors = [:]
+	@Lazy
+	@SuppressWarnings('PrivateFieldCouldBeFinal')
+	private TestExecutor testExecutor = {
+		return new TestExecutor(
+			dialects: testDialects,
+			reporter: new JUnitTestReporter(testReporter)
+		)
+	} ()
 
 	@Parameter
-	public String testPath
+	String testPath
 
 	/**
 	 * Run the Thymeleaf test executor over the test file, asserting the result
@@ -49,7 +56,6 @@ abstract class JUnitTestExecutor {
 	@Test
 	void executeThymeleafTestFile() {
 
-		def testExecutor = getTestExecutor()
 		testExecutor.execute("classpath:${testPath}")
 		assertTrue(testExecutor.reporter.lastResult.isOK())
 	}
@@ -72,22 +78,5 @@ abstract class JUnitTestExecutor {
 	protected ITestReporter getTestReporter() {
 
 		return new ConsoleTestReporter()
-	}
-
-	/**
-	 * Returns the test executor for running the Thymeleaf tests, creating one
-	 * if it doesn't already exist.
-	 * 
-	 * @return A Thymeleaf test executor for use w/ JUnit.
-	 */
-	private TestExecutor getTestExecutor() {
-
-		if (!testExecutors[this.class]) {
-			testExecutors[this.class] = new TestExecutor(
-				dialects: testDialects,
-				reporter: new JUnitTestReporter(testReporter)
-			)
-		}
-		return testExecutors[this.class]
 	}
 }

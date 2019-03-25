@@ -49,7 +49,8 @@ class JUnitTestReporter implements ITestReporter {
 	}
 
 	@Override
-	void testEnd(String executionId, int nestingLevel, ITest test, String testName, ITestResult result, long executionTimeNanos) {
+	void testEnd(String executionId, int nestingLevel, ITest test, String testName,
+		ITestResult result, long executionTimeNanos) {
 
 		lastResult = result
 		testReporter.testEnd(executionId, nestingLevel, test, testName, result, executionTimeNanos)

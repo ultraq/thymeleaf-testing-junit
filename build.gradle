@@ -32,7 +32,7 @@ project.sourceCompatibility = '1.7'
 
 project.group    = 'nz.net.ultraq.thymeleaf'
 project.artifact = 'thymeleaf-testing-junit'
-project.version  = '2.1.0'
+project.version  = '2.2.0-SNAPSHOT'
 project.year     = '2015'
 
 dependencies {
@@ -43,10 +43,6 @@ dependencies {
 		'org.thymeleaf:thymeleaf:3.0.0.RELEASE',
 		'org.thymeleaf:thymeleaf-testing:3.0.0.RELEASE'
 	)
-}
-
-cobertura {
-	coverageFormats = ['html', 'xml']
 }
 
 groovydoc {

@@ -26,8 +26,10 @@ import org.reflections.scanners.ResourcesScanner
  * 
  * @author Emanuel Rabina
  */
+@SuppressWarnings('AbstractClassWithoutAbstractMethod')
 abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 
+	@SuppressWarnings('FieldName')
 	private static final Reflections reflections = new Reflections('', new ResourcesScanner())
 
 	/**
@@ -35,7 +37,7 @@ abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 	 * 
 	 * @return List of all the Thymeleaf testing files.
 	 */
-	@Parameters(name = "{0}")
+	@Parameters(name = '{0}')
 	static List<String> listAllThymeleafTestFiles() {
 
 		return reflections.getResources(~/.+\.thtest/) as List
