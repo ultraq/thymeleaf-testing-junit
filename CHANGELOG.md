@@ -2,6 +2,10 @@
 Changelog
 =========
 
+### 2.2.0
+ - Update gradle and build scripts
+ - Listen to codenarc suggestions to make code more groovy
+
 ### 2.1.0
  - Let devs specify the Thymeleaf test reporter to use, defaulting to the
    `ConsoleTestReporter` as in previous versions.
