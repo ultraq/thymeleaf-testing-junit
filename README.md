@@ -15,13 +15,9 @@ test.
 Installation
 ------------
 
-Minimum of Java 7 and a Thymeleaf 3.0 test environment required.  For Thymeleaf
-2.1, check out the 1.x releases.
-
-### Standalone distribution
-Copy the JAR from [one of the release bundles](https://github.com/ultraq/thymeleaf-testing-junit/releases),
-placing it in the classpath of your code, or build the project from the source
-code here on GitHub.
+Minimum of Java 8 and Thymeleaf 3.0 required.  For use with older versions of
+Java or Thymeleaf, check out previous releases by exploring the [releases](https://github.com/ultraq/thymeleaf-testing-dialect/releases)
+page.
 
 ### For Maven and Maven-compatible dependency managers
 Add a dependency to your project with the following co-ordinates:
@@ -29,6 +25,11 @@ Add a dependency to your project with the following co-ordinates:
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
  - Version: (as per the badges above)
+
+### Standalone distribution
+Copy the JAR from [one of the release bundles](https://github.com/ultraq/thymeleaf-testing-junit/releases),
+placing it in the classpath of your code, or build the project from the source
+code here on GitHub.
 
 
 Usage
@@ -44,8 +45,8 @@ Thymeleaf test files as individual JUnit tests.  Voilà! :)
 ### Extending `JUnitTestExecutorAll`
 
 Extending this class is the quickest way to get all your Thymeleaf test files
-executed with minimal configuration: just implement the required abstract method
-that returns a list of all the dialects you want your tests to use.
+executed with minimal configuration: implement the required abstract method that
+returns a list of all the dialects you want your tests to use.
 
 ```java
 public class MyDialectTestExecutor extends JUnitTestExecutorAll {
@@ -65,11 +66,11 @@ public class MyDialectTestExecutor extends JUnitTestExecutorAll {
 
 ### Extending `JUnitTestExecutor`
 
-As well as implementing the abstract method like in the `JUnitTestExecutorAll`
-example above, you also need to specify your own `@Parameter`-annotated
+If you need some control over which Thymeleaf testing files get run, you can
+extend this class like above, but then specify your own `@Parameter`-annotated
 [parameterized test](https://github.com/junit-team/junit/wiki/Parameterized-tests)
-method.  This method should return paths for the list of Thymeleaf test files
-you wish to execute.
+method.  This method should return a list of paths of Thymeleaf test files you
+wish to execute.
 
 ```java
 public class MyDialectTestExecutor extends JUnitTestExecutor {

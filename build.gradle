@@ -25,20 +25,19 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/maven-support.gradle'
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/bundle.gradle'
 
-//project.name      = 'thymeleaf-testing-junit'
 project.description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
 project.archivesBaseName = 'thymeleaf-testing-junit'
-project.sourceCompatibility = '1.7'
+project.sourceCompatibility = '1.8'
 
 project.group    = 'nz.net.ultraq.thymeleaf'
 project.artifact = 'thymeleaf-testing-junit'
-project.version  = '2.2.0'
+project.version  = '3.0.0-SNAPSHOT'
 project.year     = '2015'
 
 dependencies {
 	compile(
 		'junit:junit:4.12',
-		'org.codehaus.groovy:groovy:2.4.16',
+		'org.codehaus.groovy:groovy:2.5.8',
 		'org.reflections:reflections:0.9.10',
 		'org.thymeleaf:thymeleaf:3.0.0.RELEASE',
 		'org.thymeleaf:thymeleaf-testing:3.0.0.RELEASE'
