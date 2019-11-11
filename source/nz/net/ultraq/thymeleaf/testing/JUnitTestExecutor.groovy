@@ -22,6 +22,8 @@ import org.junit.runners.Parameterized
 import org.junit.runners.Parameterized.Parameter
 import org.junit.runners.Parameterized.Parameters
 import org.thymeleaf.dialect.IDialect
+import org.thymeleaf.testing.templateengine.context.IProcessingContextBuilder
+import org.thymeleaf.testing.templateengine.context.web.WebProcessingContextBuilder
 import org.thymeleaf.testing.templateengine.engine.TestExecutor
 import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
 import org.thymeleaf.testing.templateengine.report.ITestReporter
@@ -42,6 +44,7 @@ abstract class JUnitTestExecutor {
 	private TestExecutor testExecutor = {
 		return new TestExecutor(
 			dialects: testDialects,
+			processingContextBuilder: testProcessingContextBuilder,
 			reporter: new JUnitTestReporter(testReporter)
 		)
 	} ()
@@ -68,6 +71,18 @@ abstract class JUnitTestExecutor {
 	 * @return List of additional dialects to test with.
 	 */
 	protected abstract List<? extends IDialect> getTestDialects()
+
+	/**
+	 * Return the {@code IProcessingContextBuilder} to be used by the test
+	 * executor for the test files.  Useful for providing Spring-related context
+	 * builders.  Defaults to the standard {@code WebProcessingContextBuilder}.
+	 * 
+	 * @return
+	 */
+	protected IProcessingContextBuilder getTestProcessingContextBuilder() {
+
+		return new WebProcessingContextBuilder()
+	}
 
 	/**
 	 * Extension point for providing a custom reporter to act as delegate to this
