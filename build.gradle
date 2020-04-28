@@ -16,7 +16,7 @@
 
 plugins {
 	id 'groovy'
-	id 'codenarc'
+//	id 'codenarc'
 	id 'maven'
 	id 'jacoco'
 	id 'com.github.kt3k.coveralls' version '2.10.1'
@@ -42,11 +42,6 @@ dependencies {
 		'org.thymeleaf:thymeleaf:3.0.11.RELEASE',
 		'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
 	)
-	// Needed for Codenarc to work on Java 14 for now, see: https://github.com/gradle/gradle/issues/12646
-	constraints {
-		codenarc('org.codehaus.groovy:groovy:3.0.3')
-		codenarc('org.codehaus.groovy:groovy-xml:3.0.3')
-	}
 }
 
 groovydoc {
