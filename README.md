@@ -4,9 +4,7 @@ Thymeleaf Testing JUnit
 
 [![Build Status](https://travis-ci.org/ultraq/thymeleaf-testing-junit.svg?branch=master)](https://travis-ci.org/ultraq/thymeleaf-testing-junit)
 [![Coverage Status](https://coveralls.io/repos/github/ultraq/thymeleaf-testing-junit/badge.svg?branch=master)](https://coveralls.io/github/ultraq/thymeleaf-testing-junit?branch=master)
-[![GitHub Release](https://img.shields.io/github/release/ultraq/thymeleaf-testing-junit.svg?maxAge=3600)](https://github.com/ultraq/thymeleaf-testing-junit/releases/latest)
 [![Maven Central](https://img.shields.io/maven-central/v/nz.net.ultraq.thymeleaf/thymeleaf-testing-junit.svg?maxAge=3600)](http://search.maven.org/#search|ga|1|g%3A%22nz.net.ultraq.thymeleaf%22%20AND%20a%3A%22thymeleaf-testing-junit%22)
-[![License](https://img.shields.io/github/license/ultraq/thymeleaf-testing-junit.svg?maxAge=2592000)](https://github.com/ultraq/thymeleaf-testing-junit/blob/master/LICENSE.txt)
 
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
 test.
@@ -15,21 +13,19 @@ test.
 Installation
 ------------
 
-Minimum of Java 8 and Thymeleaf 3.0 required.  For use with older versions of
-Java or Thymeleaf, check out previous releases by exploring the [releases](https://github.com/ultraq/thymeleaf-testing-dialect/releases)
-page.
+Minimum of Java 8 and Thymeleaf 3.0 required.
 
 ### For Maven and Maven-compatible dependency managers
+
 Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
- - Version: (as per the badges above)
+ - Version: `3.0.0-SNAPSHOT`
 
-### Standalone distribution
-Copy the JAR from [one of the release bundles](https://github.com/ultraq/thymeleaf-testing-junit/releases),
-placing it in the classpath of your code, or build the project from the source
-code here on GitHub.
+Check the [project releases](https://github.com/ultraq/thymeleaf-testing-unit/releases)
+for a list of available versions.  Each release page also includes a
+downloadable JAR if you want to manually add it to your project classpath.
 
 
 Usage

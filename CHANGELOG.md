@@ -4,7 +4,7 @@ Changelog
 
 ### 3.0.0
  - Minimum supported Java version is now Java 8
- - Upgrade Groovy to 2.5.8
+ - Upgrade Groovy to 3.0.3
  - Added a protected `JUnitTestExecutor.getTestProcessingContextBuilder` method
    that can be overridden to provide a custom implementation, namely the Spring
    ones provided by the Thymeleaf Testing library.

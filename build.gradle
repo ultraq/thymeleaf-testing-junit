@@ -18,12 +18,12 @@ plugins {
 	id 'groovy'
 	id 'codenarc'
 	id 'maven'
-	id 'net.saliman.cobertura' version '2.5.2'
-	id 'com.github.kt3k.coveralls' version '2.8.2'
+	id 'jacoco'
+	id 'com.github.kt3k.coveralls' version '2.10.1'
 }
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/maven-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.1.0/bundle.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.3.0/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.3.0/maven-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/2.3.0/bundle.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
 archivesBaseName = 'thymeleaf-testing-junit'
@@ -37,14 +37,19 @@ year     = '2015'
 dependencies {
 	implementation(
 		'junit:junit:4.12',
-		'org.codehaus.groovy:groovy:2.5.8',
+		'org.codehaus.groovy:groovy:3.0.3',
 		'org.reflections:reflections:0.9.10',
-		'org.thymeleaf:thymeleaf:3.0.0.RELEASE',
-		'org.thymeleaf:thymeleaf-testing:3.0.0.RELEASE'
+		'org.thymeleaf:thymeleaf:3.0.11.RELEASE',
+		'org.thymeleaf:thymeleaf-testing:3.0.11.RELEASE'
 	)
+	// Needed for Codenarc to work on Java 14 for now, see: https://github.com/gradle/gradle/issues/12646
+	constraints {
+		codenarc('org.codehaus.groovy:groovy:3.0.3')
+		codenarc('org.codehaus.groovy:groovy-xml:3.0.3')
+	}
 }
 
 groovydoc {
-	link('http://www.thymeleaf.org/apidocs/thymeleaf/3.0.0.RELEASE/', 'org.thymeleaf.')
+	link('http://www.thymeleaf.org/apidocs/thymeleaf/3.0.11.RELEASE/', 'org.thymeleaf.')
 	link('http://junit.org/junit4/javadoc/4.12/', 'org.junit.')
 }
