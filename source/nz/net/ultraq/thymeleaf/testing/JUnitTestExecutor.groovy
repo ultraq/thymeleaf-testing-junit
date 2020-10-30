@@ -61,7 +61,7 @@ abstract class JUnitTestExecutor {
 	void executeThymeleafTestFile() {
 
 		testExecutor.execute("classpath:${testPath}")
-		assertTrue(testExecutor.reporter.lastResult.isOK())
+		assertTrue(testExecutor.reporter.lastResult.ok)
 	}
 
 	/**
