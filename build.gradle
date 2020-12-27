@@ -32,7 +32,7 @@ sourceCompatibility = '1.8'
 
 group    = 'nz.net.ultraq.thymeleaf'
 artifact = 'thymeleaf-testing-junit'
-version  = '3.0.1'
+version  = '3.0.2-SNAPSHOT'
 year     = '2015'
 
 dependencies {
@@ -42,12 +42,12 @@ dependencies {
 	implementation(
 		'junit:junit:4.12',
 		'org.reflections:reflections:0.9.10',
-		'org.thymeleaf:thymeleaf:3.0.11.RELEASE',
+		'org.thymeleaf:thymeleaf:3.0.12.RELEASE',
 		'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
 	)
 }
 
 groovydoc {
-	link('http://www.thymeleaf.org/apidocs/thymeleaf/3.0.11.RELEASE/', 'org.thymeleaf.')
+	link('http://www.thymeleaf.org/apidocs/thymeleaf/3.0.12.RELEASE/', 'org.thymeleaf.')
 	link('http://junit.org/junit4/javadoc/4.12/', 'org.junit.')
 }
