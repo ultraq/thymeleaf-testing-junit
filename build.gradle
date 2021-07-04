@@ -23,8 +23,8 @@ plugins {
 	id 'distribution'
 	id 'maven-publish'
 }
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.2.1/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.2.1/maven-publish-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.4.0/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.4.0/maven-publish-support.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
 archivesBaseName = 'thymeleaf-testing-junit'
@@ -32,16 +32,16 @@ sourceCompatibility = '1.8'
 
 group    = 'nz.net.ultraq.thymeleaf'
 artifact = 'thymeleaf-testing-junit'
-version  = '3.0.2-SNAPSHOT'
+version  = '3.1.0-SNAPSHOT'
 year     = '2015'
 
 dependencies {
 	api(
-		'org.codehaus.groovy:groovy:3.0.3'
+		'org.codehaus.groovy:groovy:3.0.8'
 	)
 	implementation(
 		'junit:junit:4.12',
-		'org.reflections:reflections:0.9.10',
+		'org.reflections:reflections:0.9.12',
 		'org.thymeleaf:thymeleaf:3.0.12.RELEASE',
 		'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
 	)
