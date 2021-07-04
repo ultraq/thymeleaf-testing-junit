@@ -18,7 +18,7 @@ package nz.net.ultraq.thymeleaf.testing.tests
 
 import nz.net.ultraq.thymeleaf.testing.JUnitTestExecutor
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.standard.StandardDialect
 import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
@@ -32,11 +32,10 @@ import org.thymeleaf.testing.templateengine.report.ITestReporter
 class JUnitTestExecutorTests {
 
 	/**
-	 * Test that the current executor, when set up with parameterized values,
-	 * executes that test.
+	 * Test that the executor will execute a Thymeleaf test file.
 	 */
 	@Test
-	void executeWithParameters() {
+	void executeTestFile() {
 
 		// Create a text executor that captures STDOUT
 		def output = ''
@@ -52,8 +51,7 @@ class JUnitTestExecutorTests {
 				}
 			}
 		}
-		testExecutor.testPath = 'nz/net/ultraq/thymeleaf/testing/tests/BasicTestFile.thtest'
-		testExecutor.executeThymeleafTestFile()
+		testExecutor.executeThymeleafTestFile('nz/net/ultraq/thymeleaf/testing/tests/BasicTestFile.thtest')
 
 		assert output.contains('[EXECUTION:START]')
 		assert output.contains('nz/net/ultraq/thymeleaf/testing/tests/BasicTestFile.thtest-001')

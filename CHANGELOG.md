@@ -2,6 +2,11 @@
 Changelog
 =========
 
+### 4.0.0
+ - Now uses the JUnit platform to allow tests written in either JUnit 4
+   ("Vintage") or 5 ("Jupiter")
+   ([#7](https://github.com/ultraq/thymeleaf-testing-junit/issues/7))
+
 ### 3.0.1
  - Fix generated POM - Groovy is needed as a compile dependency
 

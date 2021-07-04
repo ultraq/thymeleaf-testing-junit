@@ -49,7 +49,7 @@ public class MyDialectTestExecutor extends JUnitTestExecutorAll {
 
   @Override
   public List<IDialect> getTestDialects() {
-    List<IDialect> dialects = new List<>();
+    List<IDialect> dialects = new ArrayList<>();
     dialects.add(new StandardDialect()); // See note below
     dialects.add(new MyDialect());
     return dialects;
@@ -62,25 +62,21 @@ public class MyDialectTestExecutor extends JUnitTestExecutorAll {
 
 ### Extending `JUnitTestExecutor`
 
-If you need some control over which Thymeleaf testing files get run, you can
-extend this class like above, but then specify your own `@Parameter`-annotated
-[parameterized test](https://github.com/junit-team/junit/wiki/Parameterized-tests)
-method.  This method should return a list of paths of Thymeleaf test files you
-wish to execute.
+If you need some control over which Thymeleaf test files get run, you can extend
+this class and then specify your own `getThymeleafTestFiles` method, which is a
+factory method that returns the list of files to execute:
 
 ```java
 public class MyDialectTestExecutor extends JUnitTestExecutor {
 
-  @Parameters(name = "{0}")
-  public static List<String> listSpecificTests() {
-    return new ArrayList<>(
-      "com/mysite/myproject/MyTest1.thtest",
-      "com/mysite/myproject/MyTest2.thtest"
-    );
+  public static List<String> getThymeleafTestFiles() {
+  	List<String> thymeleafTestFiles = new ArrayList<>();
+  	thymeleafTestFiles.add("com/mysite/myproject/MyTest1.thtest");
+  	thymeleafTestFiles.add("com/mysite/myproject/MyTest2.thtest");
+  	return thymeleafTestFiles;
   }
 }
 ```
 
-Extending this class lets you select only the test files you want tested using
-this test executor, which can be useful if you need to configure a different set
-of dialects for different tests.
+Extending this class is most useful if you need to configure a different set of
+dialects for different tests.

@@ -16,7 +16,6 @@
 
 package nz.net.ultraq.thymeleaf.testing
 
-import org.junit.runners.Parameterized.Parameters
 import org.reflections.Reflections
 import org.reflections.scanners.ResourcesScanner
 
@@ -29,17 +28,13 @@ import org.reflections.scanners.ResourcesScanner
 @SuppressWarnings('AbstractClassWithoutAbstractMethod')
 abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 
-	@SuppressWarnings('FieldName')
-	private static final Reflections reflections = new Reflections('', new ResourcesScanner())
-
 	/**
 	 * Get all the {@code .thtest} files in the project classpath.
 	 * 
 	 * @return List of all the Thymeleaf testing files.
 	 */
-	@Parameters(name = '{0}')
-	static List<String> listAllThymeleafTestFiles() {
+	static List<String> getThymeleafTestFiles() {
 
-		return reflections.getResources(~/.+\.thtest/) as List
+		return new Reflections('', new ResourcesScanner()).getResources(~/.+\.thtest/) as List
 	}
 }
