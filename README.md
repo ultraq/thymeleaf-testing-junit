@@ -2,8 +2,8 @@
 Thymeleaf Testing JUnit
 =======================
 
-[![Build Status](https://travis-ci.com/ultraq/thymeleaf-testing-junit.svg?branch=master)](https://travis-ci.com/ultraq/thymeleaf-testing-junit)
-[![Coverage Status](https://coveralls.io/repos/github/ultraq/thymeleaf-testing-junit/badge.svg?branch=master)](https://coveralls.io/github/ultraq/thymeleaf-testing-junit?branch=master)
+[![Build Status](https://travis-ci.com/ultraq/thymeleaf-testing-junit.svg?branch=main)](https://travis-ci.com/ultraq/thymeleaf-testing-junit)
+[![Coverage Status](https://coveralls.io/repos/github/ultraq/thymeleaf-testing-junit/badge.svg?branch=main)](https://coveralls.io/github/ultraq/thymeleaf-testing-junit?branch=main)
 [![Maven Central](https://img.shields.io/maven-central/v/nz.net.ultraq.thymeleaf/thymeleaf-testing-junit.svg?maxAge=3600)](http://search.maven.org/#search|ga|1|g%3A%22nz.net.ultraq.thymeleaf%22%20AND%20a%3A%22thymeleaf-testing-junit%22)
 
 A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit
