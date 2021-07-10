@@ -56,6 +56,5 @@ test {
 }
 
 groovydoc {
-	link('http://www.thymeleaf.org/apidocs/thymeleaf/3.0.12.RELEASE/', 'org.thymeleaf.')
 	link('https://junit.org/junit5/docs/5.7.2/api/org.junit.jupiter.params/', 'org.junit.jupiter.params.')
 }
