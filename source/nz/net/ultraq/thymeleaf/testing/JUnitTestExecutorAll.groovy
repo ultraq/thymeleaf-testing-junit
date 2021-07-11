@@ -22,6 +22,26 @@ import org.reflections.scanners.ResourcesScanner
 /**
  * A Thymeleaf test file executor that runs every Thymeleaf testing file in the
  * classpath.
+ * <p>
+ * Extending this class is the quickest way to get all your Thymeleaf test files
+ * executed with minimal configuration: implement the required abstract method
+ * that returns a list of all the dialects you want your tests to use.
+ * <pre><code>
+ * public class MyDialectTestExecutor extends JUnitTestExecutorAll {
+ * 
+ *   {@code @Override
+ *   public List<IDialect> getTestDialects() {
+ *     List<IDialect> dialects = new ArrayList<>();
+ *     dialects.add(new StandardDialect()); // See note below
+ *     dialects.add(new MyDialect());
+ *     return dialects;
+ *   }}
+ * }
+ * </code></pre>
+ * <blockquote>
+ * One of Thymeleaf's standard dialects, {@code StandardDialect} or
+ * {@code SpringStandardDialect}, is required so it can perform tests.
+ * </blockquote>
  * 
  * @author Emanuel Rabina
  */

@@ -16,14 +16,14 @@
 
 package nz.net.ultraq.thymeleaf.testing
 
-import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
 import org.thymeleaf.testing.templateengine.report.ITestReporter
 import org.thymeleaf.testing.templateengine.testable.ITest
 import org.thymeleaf.testing.templateengine.testable.ITestResult
 
 /**
  * Provides access to the last test result so it can be interrogated by the test
- * executor.  Just wraps the {@link ConsoleTestReporter} otherwise.
+ * executor.  Wraps {@code thymeleaf-testing}'s {@code ConsoleTestReporter}
+ * otherwise.
  * 
  * @author Emanuel Rabina
  */

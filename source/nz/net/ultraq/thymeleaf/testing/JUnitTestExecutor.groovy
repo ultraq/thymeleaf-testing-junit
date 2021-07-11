@@ -30,6 +30,24 @@ import static org.junit.jupiter.api.Assertions.*
  * An abstract Thymeleaf test file executor, contains the basics for specifying
  * a set of Thymeleaf test files to each be executed as if it were its own JUnit
  * test.
+ * <p>
+ * If you need some control over which Thymeleaf test files get run, you can
+ * extend this class and then specify your own `getThymeleafTestFiles` method,
+ * which is a factory method that returns the list of files to execute:
+ * <pre><code>
+ * public class MyDialectTestExecutor extends JUnitTestExecutor {
+ * 
+ *   {@code
+ *   public static List<String> getThymeleafTestFiles() {
+ *     List<String> thymeleafTestFiles = new ArrayList<>();
+ *     thymeleafTestFiles.add("com/mysite/myproject/MyTest1.thtest");
+ *     thymeleafTestFiles.add("com/mysite/myproject/MyTest2.thtest");
+ *     return thymeleafTestFiles;
+ *   }}
+ * }
+ * </code></pre>
+ * Extending this class is most useful if you need to configure a different set
+ * of dialects for different tests.
  * 
  * @author Emanuel Rabina
  */
@@ -81,7 +99,7 @@ abstract class JUnitTestExecutor {
 	/**
 	 * Extension point for providing a custom reporter to act as delegate to this
 	 * library's reporter which tracks test executions as a single test.  Uses a
-	 * {@link ConsoleTestReporter} if not overridden.
+	 * {@code ConsoleTestReporter} if not overridden.
 	 * 
 	 * @return Test reporter to use in execution.
 	 */
