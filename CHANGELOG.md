@@ -3,8 +3,8 @@ Changelog
 =========
 
 ### 4.0.0
- - Now uses the JUnit platform to allow tests written in either JUnit 4
-   ("Vintage") or 5 ("Jupiter")
+ - Now uses the JUnit platform to work with JUnit 5.  JUnit 4 still works but
+   needs to be updated to use the JUnit platform w/ the "vintage" engine.
    ([#7](https://github.com/ultraq/thymeleaf-testing-junit/issues/7))
 
 ### 3.0.1
