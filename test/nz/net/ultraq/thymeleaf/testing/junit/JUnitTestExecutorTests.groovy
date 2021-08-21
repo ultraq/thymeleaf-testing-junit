@@ -49,10 +49,10 @@ class JUnitTestExecutorTests {
 				}
 			}
 		}
-		testExecutor.executeThymeleafTestFile('nz/net/ultraq/thymeleaf/testing/tests/BasicTestFile.thtest')
+		testExecutor.executeThymeleafTestFile('nz/net/ultraq/thymeleaf/testing/junit/BasicTestFile.thtest')
 
 		assert output.contains('[EXECUTION:START]')
-		assert output.contains('nz/net/ultraq/thymeleaf/testing/tests/BasicTestFile.thtest-001')
+		assert output.contains('nz/net/ultraq/thymeleaf/testing/junit/BasicTestFile.thtest-001')
 		assert output.contains('Test executed OK')
 		assert output.contains('[EXECUTION:END]')
 	}
