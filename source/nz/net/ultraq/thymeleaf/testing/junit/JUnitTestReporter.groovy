@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package nz.net.ultraq.thymeleaf.testing
+package nz.net.ultraq.thymeleaf.testing.junit
 
 import org.thymeleaf.testing.templateengine.report.ITestReporter
 import org.thymeleaf.testing.templateengine.testable.ITest

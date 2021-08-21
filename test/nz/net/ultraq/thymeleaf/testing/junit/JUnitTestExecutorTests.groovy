@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package nz.net.ultraq.thymeleaf.testing.tests
-
-import nz.net.ultraq.thymeleaf.testing.JUnitTestExecutor
+package nz.net.ultraq.thymeleaf.testing.junit
 
 import org.junit.jupiter.api.Test
 import org.thymeleaf.dialect.IDialect
