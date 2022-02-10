@@ -19,40 +19,31 @@ plugins {
 	id 'groovy'
 	id 'codenarc'
 	id 'jacoco'
-	id 'com.github.kt3k.coveralls' version '2.10.1'
 	id 'distribution'
 	id 'maven-publish'
 }
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.4.0/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/3.4.0/maven-publish-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.0/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.0/maven-publish-support.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
-archivesBaseName = 'thymeleaf-testing-junit'
-sourceCompatibility = '1.8'
-
-group    = 'nz.net.ultraq.thymeleaf'
-artifact = 'thymeleaf-testing-junit'
 version  = '5.0.0-SNAPSHOT'
-year     = '2015'
+sourceCompatibility = '1.8'
+group = 'nz.net.ultraq.thymeleaf'
+year = '2015'
 
 dependencies {
-	api(
-		'org.codehaus.groovy:groovy:3.0.8'
-	)
-	implementation(
-		'org.junit.jupiter:junit-jupiter-api:5.7.2',
-		'org.junit.jupiter:junit-jupiter-params:5.7.2',
-		'org.reflections:reflections:0.9.12',
-		'org.thymeleaf:thymeleaf:3.0.12.RELEASE',
-		'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
-	)
-	runtime(
-		'org.junit.jupiter:junit-jupiter-engine:5.7.2'
-	)
-}
+	api 'org.apache.groovy:groovy:4.0.0'
+	implementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+	implementation 'org.junit.jupiter:junit-jupiter-params:5.7.2'
+	implementation 'org.reflections:reflections:0.9.12'
+	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
+	implementation 'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
+	runtimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 
-compileGroovy {
-	groovyOptions.optimizationOptions.indy = true
+	codenarc('org.codenarc:CodeNarc:2.2.0') {
+		exclude group: 'org.codehaus.groovy'
+	}
+	codenarc 'org.apache.groovy:groovy-all:4.0.0'
 }
 
 test {
