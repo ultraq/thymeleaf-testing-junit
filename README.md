@@ -32,7 +32,8 @@ Usage
 -----
 
 Create a class in your tests directory that extends one of the test executor
-classes in the `nz.net.ultraq.thymeleaf.testing` package.  Examples are below.
+classes in the `nz.net.ultraq.thymeleaf.testing.junit` package.  Examples are
+below.
 
 When you've done that, run JUnit such that it includes the class(es) you created.
 JUnit's parameterized test magic will take care of the rest, executing your
