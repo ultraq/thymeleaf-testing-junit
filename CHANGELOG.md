@@ -2,6 +2,11 @@
 Changelog
 =========
 
+### 5.0.0
+ - Added an `Automatic-Module-Name` of `nz.net.ultraq.thymeleaf.testing.junit`,
+   with classes moved into that package name too.
+ - Upgraded Groovy to 4.0.0
+
 ### 4.0.0
  - Now uses the JUnit platform to work with JUnit 5.  JUnit 4 still works but
    needs to be updated to use the JUnit platform w/ the "vintage" engine.

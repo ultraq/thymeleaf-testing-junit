@@ -21,7 +21,7 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
- - Version: `4.0.0`
+ - Version: `5.0.0`
 
 Check the [project releases](https://github.com/ultraq/thymeleaf-testing-unit/releases)
 for a list of available versions.  Each release page also includes a
