@@ -32,7 +32,7 @@ sourceCompatibility = '1.8'
 
 group    = 'nz.net.ultraq.thymeleaf'
 artifact = 'thymeleaf-testing-junit'
-version  = '5.0.0-SNAPSHOT'
+version  = '5.0.0-M1'
 year     = '2015'
 
 dependencies {
