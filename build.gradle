@@ -39,11 +39,10 @@ dependencies {
 	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
 	implementation 'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
 	runtimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
 
-	codenarc('org.codenarc:CodeNarc:2.2.0') {
-		exclude group: 'org.codehaus.groovy'
-	}
-	codenarc 'org.apache.groovy:groovy-all:4.0.0'
+codenarc {
+	toolVersion = '3.1.0'
 }
 
 test {
