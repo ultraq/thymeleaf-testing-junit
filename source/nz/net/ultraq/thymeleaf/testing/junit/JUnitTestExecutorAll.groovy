@@ -17,7 +17,9 @@
 package nz.net.ultraq.thymeleaf.testing.junit
 
 import org.reflections.Reflections
-import org.reflections.scanners.ResourcesScanner
+import org.reflections.util.ClasspathHelper
+import org.reflections.util.ConfigurationBuilder
+import static org.reflections.scanners.Scanners.Resources
 
 /**
  * A Thymeleaf test file executor that runs every Thymeleaf testing file in the
@@ -55,6 +57,11 @@ abstract class JUnitTestExecutorAll extends JUnitTestExecutor {
 	 */
 	static List<String> getThymeleafTestFiles() {
 
-		return new Reflections('', new ResourcesScanner()).getResources(~/.+\.thtest/) as List
+		return new Reflections(
+			new ConfigurationBuilder()
+				.setScanners(Resources)
+				.addUrls(ClasspathHelper.forJavaClassPath()))
+			.getResources(~/.+\.thtest/)
+			.asList()
 	}
 }

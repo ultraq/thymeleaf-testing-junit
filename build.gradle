@@ -26,7 +26,7 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.0/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.0/maven-publish-support.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
-version  = '5.0.0'
+version  = '5.1.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2015'
@@ -35,7 +35,7 @@ dependencies {
 	api 'org.apache.groovy:groovy:4.0.0'
 	implementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
 	implementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
-	implementation 'org.reflections:reflections:0.9.12'
+	implementation 'org.reflections:reflections:0.10.2'
 	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
 	implementation 'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
 	runtimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'

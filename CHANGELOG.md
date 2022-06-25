@@ -2,6 +2,9 @@
 Changelog
 =========
 
+### 5.1.1
+ - Upgrade Reflections to 0.10.2
+
 ### 5.0.0
  - Added an `Automatic-Module-Name` of `nz.net.ultraq.thymeleaf.testing.junit`,
    with classes moved into that package name too.

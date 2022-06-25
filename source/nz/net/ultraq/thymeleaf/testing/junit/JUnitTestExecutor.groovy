@@ -91,6 +91,7 @@ abstract class JUnitTestExecutor {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings('GrMethodMayBeStatic')
 	protected IProcessingContextBuilder getTestProcessingContextBuilder() {
 
 		return new WebProcessingContextBuilder()
