@@ -2,7 +2,7 @@
 Changelog
 =========
 
-### 5.1.1
+### 5.1.0
  - Upgrade Reflections to 0.10.2
 
 ### 5.0.0
