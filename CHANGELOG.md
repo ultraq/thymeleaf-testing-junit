@@ -3,7 +3,10 @@ Changelog
 =========
 
 ### 5.1.0
+ - Upgrade Groovy to 4.0.4
  - Upgrade Reflections to 0.10.2
+ - Updated groovydocs to include links to Thymeleaf and Thymeleaf Testing
+   classes when used
 
 ### 5.0.0
  - Added an `Automatic-Module-Name` of `nz.net.ultraq.thymeleaf.testing.junit`,

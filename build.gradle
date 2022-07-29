@@ -22,17 +22,17 @@ plugins {
 	id 'distribution'
 	id 'maven-publish'
 }
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.0/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.0/maven-publish-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.0/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.0/maven-publish-support.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
-version  = '5.1.0-SNAPSHOT'
+version  = '5.1.0'
 sourceCompatibility = '1.8'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2015'
 
 dependencies {
-	api 'org.apache.groovy:groovy:4.0.0'
+	api 'org.apache.groovy:groovy:4.0.4'
 	implementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
 	implementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
 	implementation 'org.reflections:reflections:0.10.2'
@@ -48,7 +48,9 @@ test {
 }
 
 groovydoc {
-	link('https://junit.org/junit5/docs/5.7.2/api/org.junit.jupiter.params/', 'org.junit.jupiter.params.')
+	link('https://junit.org/junit5/docs/5.8.2/api/org.junit.jupiter.params/', 'org.junit.jupiter.params.')
+	link('https://javadoc.io/doc/org.thymeleaf/thymeleaf-testing/3.0.4.RELEASE/', 'org.thymeleaf.testing.')
+	link('https://www.thymeleaf.org/apidocs/thymeleaf/3.0.15.RELEASE/', 'org.thymeleaf.')
 }
 
 jar {
