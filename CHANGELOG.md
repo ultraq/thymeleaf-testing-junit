@@ -2,6 +2,22 @@
 Changelog
 =========
 
+### 5.2.0
+ - Upgrade Groovy to 4.0.6
+ - Work with Thymeleaf 3.1.0, using a `JavaxServletTestWebExchangeBuilder` as
+   the web exchange implementation which is how Thymeleaf 3.0 would have worked.
+   To use a jakarta EE version instead, implement your own `JUnitTestExecutor`,
+   and include something like:
+
+   ```groovy
+   private JakartaServletTestWebExchangeBuilder webExchangeBuilder = JakartaServletTestWebExchangeBuilder.create()
+
+   @Override
+   protected IProcessingContextBuilder getTestProcessingContextBuilder() {
+     return new WebProcessingContextBuilder(webExchangeBuilder)
+   }
+   ```
+
 ### 5.1.0
  - Upgrade Groovy to 4.0.4
  - Upgrade Reflections to 0.10.2

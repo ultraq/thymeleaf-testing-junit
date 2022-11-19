@@ -20,8 +20,9 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.testing.templateengine.context.IProcessingContextBuilder
+import org.thymeleaf.testing.templateengine.context.web.JavaxServletTestWebExchangeBuilder
 import org.thymeleaf.testing.templateengine.context.web.WebProcessingContextBuilder
-import org.thymeleaf.testing.templateengine.engine.TestExecutor
+import org.thymeleaf.testing.templateengine.engine.TestExecutorFactory
 import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
 import org.thymeleaf.testing.templateengine.report.ITestReporter
 import static org.junit.jupiter.api.Assertions.assertTrue
@@ -53,6 +54,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue
  */
 abstract class JUnitTestExecutor {
 
+	private final JavaxServletTestWebExchangeBuilder webExchangeBuilder = JavaxServletTestWebExchangeBuilder.create()
+
 	/**
 	 * Run the Thymeleaf test executor over a single test file, asserting the
 	 * result was OK (execution result matched the expected output).
@@ -68,11 +71,11 @@ abstract class JUnitTestExecutor {
 	@MethodSource('getThymeleafTestFiles')
 	void executeThymeleafTestFile(String testFile) {
 
-		def testExecutor = new TestExecutor(
-			dialects: testDialects,
-			processingContextBuilder: testProcessingContextBuilder,
-			reporter: new JUnitTestReporter(testReporter)
-		)
+		def testExecutor = TestExecutorFactory.createTestExecutor(testProcessingContextBuilder)
+		testExecutor.with {
+			dialects = testDialects
+			reporter = new JUnitTestReporter(testReporter)
+		}
 		testExecutor.execute("classpath:${testFile}")
 		assertTrue(testExecutor.reporter.lastResult.ok)
 	}
@@ -93,7 +96,7 @@ abstract class JUnitTestExecutor {
 	@SuppressWarnings('GrMethodMayBeStatic')
 	protected IProcessingContextBuilder getTestProcessingContextBuilder() {
 
-		return new WebProcessingContextBuilder()
+		return new WebProcessingContextBuilder(webExchangeBuilder)
 	}
 
 	/**

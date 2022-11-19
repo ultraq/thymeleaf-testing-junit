@@ -26,19 +26,23 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.0/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.0/maven-publish-support.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
-version  = '5.1.0'
+version  = '5.2.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2015'
 
+def junitVersion = '5.9.0'
+def thymeleafVersion = '3.1.0.RELEASE'
+
 dependencies {
-	api 'org.apache.groovy:groovy:4.0.4'
-	implementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-	implementation 'org.junit.jupiter:junit-jupiter-params:5.8.2'
+	api 'org.apache.groovy:groovy:4.0.6'
+	implementation 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+	implementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
 	implementation 'org.reflections:reflections:0.10.2'
-	implementation 'org.thymeleaf:thymeleaf:3.0.15.RELEASE'
-	implementation 'org.thymeleaf:thymeleaf-testing:3.0.4.RELEASE'
-	runtimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+	implementation "org.thymeleaf:thymeleaf:${thymeleafVersion}"
+	implementation "org.thymeleaf.testing:thymeleaf-testing:${thymeleafVersion}"
+	runtimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
 
 	codenarc 'org.codenarc:CodeNarc-Groovy4:3.1.0'
 }
@@ -48,9 +52,9 @@ test {
 }
 
 groovydoc {
-	link('https://junit.org/junit5/docs/5.8.2/api/org.junit.jupiter.params/', 'org.junit.jupiter.params.')
-	link('https://javadoc.io/doc/org.thymeleaf/thymeleaf-testing/3.0.4.RELEASE/', 'org.thymeleaf.testing.')
-	link('https://www.thymeleaf.org/apidocs/thymeleaf/3.0.15.RELEASE/', 'org.thymeleaf.')
+	link("https://junit.org/junit5/docs/${junitVersion}/api/org.junit.jupiter.params/", 'org.junit.jupiter.params.')
+	link("https://javadoc.io/doc/org.thymeleaf/thymeleaf-testing/${thymeleafVersion}/", 'org.thymeleaf.testing.')
+	link("https://www.thymeleaf.org/apidocs/thymeleaf/${thymeleafVersion}/", 'org.thymeleaf.')
 }
 
 jar {
