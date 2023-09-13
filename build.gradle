@@ -36,16 +36,16 @@ def thymeleafVersion = '3.1.2.RELEASE'
 dependencies {
 	api 'org.apache.groovy:groovy:4.0.14'
 	implementation 'javax.servlet:javax.servlet-api:4.0.1'
-	implementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
 	implementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
 	implementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
 	implementation 'org.reflections:reflections:0.10.2'
 	implementation "org.thymeleaf:thymeleaf:${thymeleafVersion}"
 	implementation "org.thymeleaf.testing:thymeleaf-testing:${thymeleafVersion}"
 	runtimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
-	runtimeOnly("org.junit.platform:junit-platform-launcher")
 
 	codenarc 'org.codenarc:CodeNarc:3.3.0-groovy-4.0'
+	testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.9'
 }
 
