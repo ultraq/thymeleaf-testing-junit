@@ -22,29 +22,34 @@ plugins {
 	id 'distribution'
 	id 'maven-publish'
 }
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.0/gradle-support.gradle'
-apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.0/maven-publish-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/gradle-support.gradle'
+apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/maven-publish-support.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
 version  = '5.2.0-SNAPSHOT'
-sourceCompatibility = '1.8'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2015'
 
-def junitVersion = '5.9.0'
-def thymeleafVersion = '3.1.0.RELEASE'
+def junitVersion = '5.9.2'
+def thymeleafVersion = '3.1.2.RELEASE'
 
 dependencies {
-	api 'org.apache.groovy:groovy:4.0.6'
+	api 'org.apache.groovy:groovy:4.0.14'
 	implementation 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
 	implementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
 	implementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
 	implementation 'org.reflections:reflections:0.10.2'
 	implementation "org.thymeleaf:thymeleaf:${thymeleafVersion}"
 	implementation "org.thymeleaf.testing:thymeleaf-testing:${thymeleafVersion}"
 	runtimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+	runtimeOnly("org.junit.platform:junit-platform-launcher")
 
-	codenarc 'org.codenarc:CodeNarc-Groovy4:3.1.0'
+	codenarc 'org.codenarc:CodeNarc:3.3.0-groovy-4.0'
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
 }
 
 test {
