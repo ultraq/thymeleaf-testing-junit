@@ -21,6 +21,8 @@ import org.thymeleaf.dialect.IDialect
 import org.thymeleaf.standard.StandardDialect
 import org.thymeleaf.testing.templateengine.report.ConsoleTestReporter
 import org.thymeleaf.testing.templateengine.report.ITestReporter
+import static org.hamcrest.MatcherAssert.assertThat
+import static org.hamcrest.Matchers.containsString
 
 /**
  * Tests for the {@link JUnitTestExecutor} class.
@@ -51,11 +53,11 @@ class JUnitTestExecutorTests {
 		}
 		testExecutor.executeThymeleafTestFile('nz/net/ultraq/thymeleaf/testing/junit/BasicTestFile.thtest')
 
-		assert output.contains('[EXECUTION:START]')
-		assert output.contains(
+		assertThat(output, containsString('[EXECUTION:START]'))
+		assertThat(output, containsString(
 			['nz', 'net', 'ultraq', 'thymeleaf', 'testing', 'junit', 'BasicTestFile.thtest-001'].join(File.separator)
-		)
-		assert output.contains('Test executed OK')
-		assert output.contains('[EXECUTION:END]')
+		))
+		assertThat(output, containsString('Test executed OK'))
+		assertThat(output, containsString('[EXECUTION:END]'))
 	}
 }

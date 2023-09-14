@@ -44,6 +44,7 @@ dependencies {
 	runtimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
 
 	codenarc 'org.codenarc:CodeNarc:3.3.0-groovy-4.0'
+	testImplementation 'org.hamcrest:hamcrest:2.2'
 	testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.9'

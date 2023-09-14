@@ -17,6 +17,7 @@
 package nz.net.ultraq.thymeleaf.testing.junit
 
 import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.assertEquals
 
 /**
  * Tests for the {@link JUnitTestExecutorAll} class.
@@ -32,6 +33,6 @@ class JUnitTestExecutorAllTests {
 	void findsAllThymeleafTestFiles() {
 
 		def testFiles = JUnitTestExecutorAll.thymeleafTestFiles
-		assert testFiles.size() == 3
+		assertEquals(testFiles.size(), 3)
 	}
 }
