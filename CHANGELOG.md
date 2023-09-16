@@ -2,13 +2,12 @@
 Changelog
 =========
 
-### 5.2.0
+### 6.0.0
  - Upgrade Groovy to 4.0.14
- - Work with Thymeleaf 3.1.0, using a `JavaxServletTestWebExchangeBuilder` as
-   the web exchange implementation which is how Thymeleaf 3.0 would have worked.
-   To use a jakarta EE version instead, implement your own `JUnitTestExecutor`,
-   and include something like:
-
+ - Work with Thymeleaf 3.1, using a `JavaxServletTestWebExchangeBuilder` as the
+   web exchange implementation which is how Thymeleaf 3.0 would have worked.  To
+   use a jakarta EE version instead, implement your own `JUnitTestExecutor`, and
+   include something like:
    ```groovy
    private JakartaServletTestWebExchangeBuilder webExchangeBuilder = JakartaServletTestWebExchangeBuilder.create()
 
@@ -17,6 +16,8 @@ Changelog
      return new WebProcessingContextBuilder(webExchangeBuilder)
    }
    ```
+ - The above also includes an upgrade to Mockito 5 whose minimum JDK version is
+   11, so this project requires Java 11 now.
 
 ### 5.1.0
  - Upgrade Groovy to 4.0.4

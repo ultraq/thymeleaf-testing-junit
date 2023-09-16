@@ -13,7 +13,7 @@ test.
 Installation
 ------------
 
-Minimum of Java 8 and Thymeleaf 3.1 required.
+Minimum of Java 11 and Thymeleaf 3.1 required.
 
 ### For Maven and Maven-compatible dependency managers
 
@@ -21,7 +21,7 @@ Add a dependency to your project with the following co-ordinates:
 
  - GroupId: `nz.net.ultraq.thymeleaf`
  - ArtifactId: `thymeleaf-testing-junit`
- - Version: `5.2.0`
+ - Version: `6.0.0`
 
 Check the [project releases](https://github.com/ultraq/thymeleaf-testing-unit/releases)
 for a list of available versions.  Each release page also includes a
