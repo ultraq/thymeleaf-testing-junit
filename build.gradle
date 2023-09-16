@@ -26,7 +26,7 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.3.1/maven-publish-support.gradle'
 
 description = 'A Thymeleaf Testing / JUnit bridge to treat each Thymeleaf test file as a JUnit test.'
-version  = '5.2.0-SNAPSHOT'
+version  = '5.2.0'
 group = 'nz.net.ultraq.thymeleaf'
 year = '2015'
 

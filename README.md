@@ -13,7 +13,7 @@ test.
 Installation
 ------------
 
-Minimum of Java 11 and Thymeleaf 3.1 required.
+Minimum of Java 8 and Thymeleaf 3.1 required.
 
 ### For Maven and Maven-compatible dependency managers
 
