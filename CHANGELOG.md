@@ -2,7 +2,7 @@
 Changelog
 =========
 
-### 6.0.0
+### 5.2.0
  - Upgrade Groovy to 4.0.14
  - Work with Thymeleaf 3.1, using a `JavaxServletTestWebExchangeBuilder` as the
    web exchange implementation which is how Thymeleaf 3.0 would have worked.  To
@@ -16,8 +16,6 @@ Changelog
      return new WebProcessingContextBuilder(webExchangeBuilder)
    }
    ```
- - The above also includes an upgrade to Mockito 5 whose minimum JDK version is
-   11, so this project requires Java 11 now.
 
 ### 5.1.0
  - Upgrade Groovy to 4.0.4
